@@ -1,0 +1,27 @@
+
+  <form action="/dashboard/addplacemark" method="POST">
+    <div class="field">
+      <label class="label">Create a PlaceMark</label>
+      <input class="input" type="text" placeholder="Enter the place name" name="title">
+      <textarea class="textarea" placeholder="Description" name="description"></textarea>
+      <input class="input is-short" type="text" placeholder="Enter the Address" name="address">
+      <div class="file is-normal has-name">
+      <label class="file-label">
+        <input class="file-input" type="file" name="picture">
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fas fa-upload"></i>
+          </span>
+          <span class="file-label">
+            Upload a photo
+          </span>
+        </span>
+        <span class="file-name">
+          
+        </span>
+      </label>
+    </div>
+
+    </div>
+    <button class="button is-link">Add Placemark</button>
+  </form>
