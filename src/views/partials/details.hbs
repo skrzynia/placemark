@@ -1,8 +1,23 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
+<div class="columns is-vcentered">
+  <div class="column ">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="columns"></div>
+  <div class="column">
+    <div id="map"></div>
+  </div>
+  <div class="column is-one-quarter">
+    <img src="{{weather.weather}}" id="weather">
+  </div>
+    <div class="column is-one-quarter">
+    <p class="is-vcentered" id="temperature">{{weather.temperature}}°C</p>
   </div>
 </div>
 <div class="card">
@@ -16,7 +31,7 @@
             </div>
       <div class="media-content">
         <p class="title is-4">{{placemark.description}}</p><br>
-        <p class="subtitle is-6"><i class="fas fa-map-marker-alt"></i> {{placemark.address}}</p>
+        <p id="address" class="subtitle is-6"><i class="fas fa-map-marker-alt"></i> {{placemark.address}}</p>
         <p class="subtitle is-6">@{{placemark.firstName}} {{placemark.lastName}}</p>
       </div>
     </div>

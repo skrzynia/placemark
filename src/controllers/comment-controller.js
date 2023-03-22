@@ -1,13 +1,19 @@
 import { CommentSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import { getWeather } from "../utility.js";
+
+
 
 export const commentController = {
   index: {
     handler: async function (request, h) {
       const placemark = await db.placemarkStore.getPlacemarkById(request.params.id);
+      const city = placemark.address.split(",");
+      const weather = await getWeather(city);
       const viewData = {
         title: "PlaceMark",
         placemark: placemark,
+        weather: weather
 
       };
       return h.view("placemark-view", viewData);

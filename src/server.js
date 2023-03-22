@@ -32,11 +32,13 @@ const swaggerOptions = {
   },
 };
 
+
 async function init() {
   const server = Hapi.server({
     port: process.env.PORT || 3000,
   });
 
+    
   await server.register(Inert);
   await server.register(Vision);
   await server.register(Cookie);
@@ -87,5 +89,4 @@ process.on("unhandledRejection", (err) => {
   console.log(err);
   process.exit(1);
 });
-
 init();
