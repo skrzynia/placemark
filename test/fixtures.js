@@ -1,4 +1,4 @@
-export const serviceUrl = "http://localhost:3000";
+export const serviceUrl = "http://wojtpc:3000";
 
 export const maggie = {
   firstName: "Maggie",
@@ -58,15 +58,15 @@ export const testPlacemarks = [
   {
     title: "Los Pollos Hermanos",
     description: "Best chickens in Albuquerqe ",
-    address: "Albuquerqe, 121230",
+    address: "Albuquerque, 121230",
     date: new Date().toLocaleDateString(),
     time: new Date().toLocaleTimeString(),
     rate: 0,
   },
   {
-    title: "New York City pastry",
+    title: "London pastry",
     description: "Pastry from NYC",
-    address: "New York City, 5th avenue, 42 street",
+    address: "London, 5th avenue, 42 street",
     date: new Date().toLocaleDateString(),
     time: new Date().toLocaleTimeString(),
     rate: 0,
