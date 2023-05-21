@@ -24,6 +24,16 @@ export const placemarkMongoStore = {
     return this.getPlacemarkById(placemarkObj._id);
   },
 
+
+  async getRating(id){
+    const comments = await commentMongoStore.getCommentByPlacemarkId(id);
+    let rating = 0;
+    for(let i = 0; i < comments.length; i++){
+      rating += comments[i].rating / comments.length;
+    }
+   return rating;
+  },
+
   async getUserPlaylists(id) {
     const playlist = await Placemark.find({ userid: id }).lean();
     return playlist;

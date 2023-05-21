@@ -1,10 +1,13 @@
 
-  <form action="/dashboard/addplacemark" method="POST">
+  <form action="/dashboard/addplacemark" method="POST" enctype="multipart/form-data">
     <div class="field">
       <label class="label">Create a PlaceMark</label>
       <input class="input" type="text" placeholder="Enter the place name" name="title">
+        <br>
       <textarea class="textarea" placeholder="Description" name="description"></textarea>
+        <br>
       <input class="input is-short" type="text" placeholder="Enter the Address" name="address">
+        <br>
       <div class="file is-normal has-name">
       <label class="file-label">
         <input class="file-input" type="file" name="picture">
@@ -13,11 +16,11 @@
             <i class="fas fa-upload"></i>
           </span>
           <span class="file-label">
-            Upload a photo
+              Select picture to upload file
           </span>
         </span>
         <span class="file-name">
-          
+                Upload a photo
         </span>
       </label>
     </div>

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js --ignore 'src/models/json/*.json'",
+    "dev": "nodemon src/server.js --ignore 'src/models/json/*.json' 'src/map.js'",
     "lint": "eslint . --ext .js",
     "test": "_mocha --timeout 15000 --ui tdd test/**/*.js -exit",
     "testmodels": "_mocha --ui tdd test/models/**/*.js -exit",
@@ -36,6 +36,7 @@
     "@hapi/hapi": "^21.3.0",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.1",
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "firebase": "^9.18.0",
     "handlebars": "^4.7.7",
@@ -43,9 +44,12 @@
     "hapi-swagger": "^15.0.0",
     "joi": "^17.8.4",
     "jsonwebtoken": "^9.0.0",
+    "leaflet": "^1.9.4",
     "lowdb": "^5.1.0",
     "mongoose": "^6.10.3",
+    "multer": "^1.4.5-lts.1",
     "node-fetch": "^3.3.1",
+    "sanitize-html": "^2.10.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

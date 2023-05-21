@@ -15,8 +15,8 @@ export const commentMongoStore = {
   },
 
   async getCommentByPlacemarkId(id) {
-    const tracks = await Comment.find({ placemarkid: id }).lean();
-    return tracks;
+    const comments = await Comment.find({ placemarkid: id }).lean();
+    return comments;
   },
 
   async getCommentById(id) {

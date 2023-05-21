@@ -11,6 +11,7 @@ const commentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Placemark",
   },
+  rating: Number
 });
 
 export const Comment = Mongoose.model("Comment", commentSchema);

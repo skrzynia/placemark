@@ -18,8 +18,10 @@ export const webRoutes = [
   { method: "POST", path: "/account/update", config: accountSettingController.updateAccount },
 
   { method: "GET", path: "/dashboard", config: dashboardController.index },
-  { method: "POST", path: "/dashboard/addplacemark", config: dashboardController.addPlaylist },
-  { method: "GET", path: "/dashboard/deleteplacemark/{id}", config: dashboardController.deletePlaylist },
+  { method: "POST", path: "/dashboard/addplacemark", config: dashboardController.addPlacemark},
+  { method: "GET", path: "/dashboard/deleteplacemark/{id}", config: dashboardController.deletePlacemark },
+  { method: "POST", path: "/dashboard/filteredResults", config: dashboardController.filteredResults},
+
 
   { method: "GET", path: "/placemark/{id}", config: commentController.index },
   { method: "POST", path: "/placemark/{id}/addcomment", config: commentController.addComment },

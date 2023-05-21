@@ -44,6 +44,7 @@ export const userMongoStore = {
     olduser.lastName = newUser.lastName;
     olduser.email = newUser.email;
     olduser.password = newUser.password;
+    olduser.pictureName = newUser.pictureName;
     await olduser.save();
   }
 };

@@ -1,4 +1,4 @@
-export const serviceUrl = "http://wojtpc:3000";
+export const serviceUrl = "http://WojtPC:3000";
 
 export const maggie = {
   firstName: "Maggie",

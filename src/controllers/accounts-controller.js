@@ -1,5 +1,9 @@
 import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
+import sanitizeHtml from 'sanitize-html'
 import { db } from "../models/db.js";
+import bcrypt from "bcrypt";
+
+const saltRound = 10;
 
 export const accountsController = {
   index: {
@@ -24,7 +28,15 @@ export const accountsController = {
       },
     },
     handler: async function (request, h) {
-      const user = request.payload;
+      const hash = await bcrypt.hash(request.payload.password, saltRound);
+      const firstName = request.payload.firstName;
+      const lastName = request.payload.lastName;
+      const password = hash
+      const email = request.payload.email
+      const pictureName = null;
+      const user = {
+        firstName, lastName, password, email, pictureName
+      }
       await db.userStore.addUser(user);
       return h.redirect("/");
     },
@@ -45,9 +57,12 @@ export const accountsController = {
       },
     },
     handler: async function (request, h) {
-      const { email, password } = request.payload;
+      const email = sanitizeHtml(request.payload.email);
+      console.log(request.payload.password);
+      const password = request.payload.password;
       const user = await db.userStore.getUserByEmail(email);
-      if (!user || user.password !== password) {
+      const passwordMatch = await bcrypt.compare(password, user.password);
+      if (!user || !passwordMatch) {
         return h.redirect("/");
       }
       request.cookieAuth.set({ id: user._id });

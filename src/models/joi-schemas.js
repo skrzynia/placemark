@@ -6,6 +6,7 @@ export const UserCredentialsSpec = Joi.object()
   .keys({
     email: Joi.string().email().example("homer@simpson.com").required(),
     password: Joi.string().example("secret").required(),
+    picture: Joi.any().optional(),
   })
   .label("UserCredentials");
 
@@ -24,6 +25,7 @@ export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 export const CommentSpec = Joi.object()
   .keys({
     description: Joi.string().required().example("Some Comment"),
+      rating: Joi.string().required().example("1"),
     placemarkid: IdSpec,
   })
   .label("Comment");

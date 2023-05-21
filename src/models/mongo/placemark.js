@@ -14,7 +14,11 @@ const placemarkSchema = new Schema({
     ref: "User",
   },
   firstName: String,
-  lastName: String
+  lastName: String,
+  rating: Number,
+  picture: Object,
+  placePicture: String,
+  pictureName: String
 });
 
 export const Placemark = Mongoose.model("Placemark", placemarkSchema);
